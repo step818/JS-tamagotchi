@@ -1,24 +1,24 @@
-// import { Health } from './../src/tamagotchi.js';
+import { Tamagotchi } from './../src/tamagotchi.js';
 
-// describe('Health', function() {
-//   let fuzzy = new Health("Fuzzy");
-
-//   beforeEach(function() {
-//     jasmine.clock().install();
-//     fuzzy.setHunger();
-//   });
-
-import { bear } from './../src/tamagotchi.js';
-
-describe('Tamagotchi', function() {
-  let fuzzy = bear;
+describe('Health', function() {
+  let fuzzy = new Tamagotchi("Fuzzy");
 
   beforeEach(function() {
     jasmine.clock().install();
-    // fuzzy.foodLevel = 10;
-    fuzzy.name = "Fuzzy";
     fuzzy.setHunger();
   });
+
+// import { bear } from './../src/tamagotchi.js';
+
+// describe('Tamagotchi', function() {
+//   let fuzzy = bear;
+
+//   beforeEach(function() {
+//     jasmine.clock().install();
+//     fuzzy.foodLevel = 10;
+//     fuzzy.name = "Fuzzy";
+//     fuzzy.setHunger();
+//   });
 
   afterEach(function() {
     jasmine.clock().uninstall();

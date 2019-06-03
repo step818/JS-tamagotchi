@@ -2,15 +2,15 @@ import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Health } from './tamagotchi.js';
+import { bear } from './tamagotchi.js';
 
 $(document).ready(function() {
     
     $('#submit').click(function(event) {
     event.preventDefault();
 
-    let h = new Health(name);
+    let p = new bear(name);
 
-    $('#name').text(h.this.name);
+    $('#name').show(p.name);
     });
 });
