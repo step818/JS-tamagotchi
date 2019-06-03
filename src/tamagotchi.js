@@ -1,9 +1,11 @@
+
+
 export class Tamagotchi {
 
     constructor(name) {
       this.name = name;
       this.foodLevel = 10;
-      amount = 1;
+      
     }
   
     setHunger() {
