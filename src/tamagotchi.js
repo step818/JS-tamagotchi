@@ -9,14 +9,20 @@ export default class Tamagotchi {
     }
   
     setHunger() {
-      setInterval(() => {
+      let interval = setInterval(() => {
         this.foodLevel--;
+        if(this.foodLevel <= 0) {
+          clearInterval(interval);
+        }
       }, 1000);
     }
 
     setRest() {
-      setInterval(() => {
+      let interval = setInterval(() => {
         this.restLevel--;
+        if(this.restLevel <= 0) {
+          clearInterval(interval);
+        }
       }, 3000);
     }
 

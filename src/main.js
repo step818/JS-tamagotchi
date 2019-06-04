@@ -21,19 +21,14 @@ $(document).ready(function() {
 
 
 
-
         //Hunger and feed
         p.setHunger();
         setInterval(function() {
-            $('#foodLevel').text(p.foodLevel);
-            
-            if (p.foodLevel) {
-                $('#dead').text(p.didYouDie());
-            //     console.log("i think your dead");
-                // $('#dead').text(p.name + "has died!!!!!!!");
+            $('#foodLevel').text(p.foodLevel);  
+             if (p.foodLevel <= 0) {
+               $('#dead').text(p.didYouDie());
             }
         }, 100);
-
         $('#feed').click(function (event) {
             event.preventDefault();
             p.feed();
@@ -41,20 +36,26 @@ $(document).ready(function() {
         });
         console.log(p.foodLevel);
 
-
-
         //Rest and rest
         p.setRest();
         setInterval(function() {
             $('#restLevel').text(p.restLevel);
+            if (p.restLevel <= 0) {
+              $('#dead').text(p.didYouDie());
+            }
         }, 1000);
-
         $('#nap').click(function(event) {
             event.preventDefault();
             p.rest();
             $('#restLevel').text(p.restLevel);
         });
-        p.didYouDie();
+        
+        // if(p.didYouDie()) {
+        //     $('#baby').hide();
+        //     $('#restLevel').hide();
+        //     $('#foodLevel').hide();
+        //     $('#deceased').show();
+        // }
     });
     
 
