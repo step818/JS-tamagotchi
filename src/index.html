@@ -23,8 +23,8 @@
             <div class="tamImage" id="adult">
                 <img style="height: 400px; width: auto;" src="" alt="Picture of an adult dragon">
             </div>
-            <div class="tamImage" id="deceased">
-                <img style="height: 400px; width: auto;" src="" alt="Picture of a dead dragon">
+            <div id="deceased">
+                <img style="height: 400px; width: auto;" src="./img/tombstone.gif" alt="Picture of a dead dragon">
             </div>
 
             <form id="nameForm">
@@ -34,12 +34,12 @@
             </form>
             
             <p><span id="name"></span> gets hungry and sleeps all the time. Feed him and put him to sleep frequently or it will die!</p>
-            <h4>Hunger Level: <span id="foodLevel"></span></h4>
+            <h4 class="showHunger">Hunger Level: <span id="foodLevel"></span></h4>
             <div class="progress-bar">
                 <div class="bar" id="hunger"></div>
             </div>
 
-            <h4>Sleep Level: <span id="restLevel"></span></h4>
+            <h4 class="showSleep">Sleep Level: <span id="restLevel"></span></h4>
             <div class="progress-bar">
                 <div class="bar" id="rest"></div>
             </div>
@@ -50,8 +50,8 @@
                 <button class="bigButton" id="feed">Feed</button>
                 <button class="bigButton" id="nap">Sleep</button>
             </div>
-            <p>Food: <span id="showFood"></span></p><br>
-            <p>uhhh... <span id="dead"></span></p>
+        
+            <p><span id="dead"></span></p>
         </div>
     </body>
 </html>

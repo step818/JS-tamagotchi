@@ -27,6 +27,10 @@ $(document).ready(function() {
             $('#foodLevel').text(p.foodLevel);  
              if (p.foodLevel <= 0) {
                $('#dead').text(p.didYouDie());
+               $('#baby').hide();
+                $('#restLevel').hide();
+                $('#foodLevel').hide();
+                $('#deceased').show();
             }
         }, 100);
         $('#feed').click(function (event) {
@@ -42,6 +46,10 @@ $(document).ready(function() {
             $('#restLevel').text(p.restLevel);
             if (p.restLevel <= 0) {
               $('#dead').text(p.didYouDie());
+              $('#baby').hide();
+            $('.showSleep').hide();
+            $('.showHunger').hide();
+            $('#deceased').show();
             }
         }, 1000);
         $('#nap').click(function(event) {
@@ -49,17 +57,18 @@ $(document).ready(function() {
             p.rest();
             $('#restLevel').text(p.restLevel);
         });
-        
-        // if(p.didYouDie()) {
-        //     $('#baby').hide();
-        //     $('#restLevel').hide();
-        //     $('#foodLevel').hide();
-        //     $('#deceased').show();
-        // }
+
+        //Dead functionality
+        if(p.foodLevel <= 0) {
+            $('#baby').hide();
+            $('.showSleep').hide();
+            $('.showHunger').hide();
+            $('#deceased').show();
+        }
+
+
+
     });
-    
-
-
     
     
 });
