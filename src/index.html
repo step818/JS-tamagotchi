@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
         <title>
             Tamagotchi
         </title>
@@ -11,24 +11,38 @@
     <body>
         <h1>Welcome to Tamagotchi Land</h1>
         <div class="container">
+
             <h3>You now have to take care of a tamagotchi.</h3>
+
+            <div class="tamImage" id="baby">
+                <img src="./img/babydragon.png" alt="Picture of baby dragon">
+            </div>
 
             <form id="nameForm">
                 <label for="tamagotchiName" >Name your new tamagotchi</label>
                 <input id="tamagotchiName" type="text" required><br>
                 <button id="start" class="btn btn-primary">Start</button>
             </form>
-
-            <p><span id="name"></span> gets hungry all the time. Feed him frequently or he will eat you!</p>
-            <h4>Hunger Level: <span id="foodLevels"></span></h4>
+            
+            <p><span id="name"></span> gets hungry and sleeps all the time. Feed him and put him to sleep frequently or it will die!</p>
+            <h4>Hunger Level: <span id="foodLevel"></span></h4>
             <div class="progress-bar">
                 <div class="bar" id="hunger"></div>
             </div>
 
-            <div id=buttons>
+            <h4>Sleep Level: <span id="restLevel"></span></h4>
+            <div class="progress-bar">
+                <div class="bar" id="rest"></div>
+            </div>
+
+            
+
+            <div id="buttons">
                 <button class="bigButton" id="feed">Feed</button>
+                <button class="bigButton" id="nap">Sleep</button>
             </div>
             <p>Food: <span id="showFood"></span></p><br>
+            <p>uhhh... <span id="dead"></span></p>
         </div>
     </body>
 </html>

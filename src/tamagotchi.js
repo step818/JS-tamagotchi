@@ -5,7 +5,7 @@ export default class Tamagotchi {
     constructor(name) {
       this.name = name;
       this.foodLevel = 10;
-      
+      this.restLevel = 10;
     }
   
     setHunger() {
@@ -14,20 +14,28 @@ export default class Tamagotchi {
       }, 1000);
     }
 
-    didYouDie() {
-      let interval = setInterval(() => {
-        if(this.foodLevel <= 0) {
-          clearInterval(interval);
-          return `${this.name} has died!!!`;
-        } else {
-          return false;
-        }
-      }, 1000);
+    setRest() {
+      setInterval(() => {
+        this.restLevel--;
+      }, 3000);
     }
 
     feed() {
       this.foodLevel = 10;
     }
+
+    rest() {
+      this.restLevel = 10;
+    }
+
+    didYouDie() {
+        if(this.foodLevel <= 0 || this.restLevel <= 0) {
+          return `${this.name} has died!!!`;
+        } else {
+          return false;
+        }
+    }
+    
   }
 
 

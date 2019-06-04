@@ -1,3 +1,13 @@
+body {
+    background-color: aqua;
+    color: coral;
+}
+
 .container {
     background-color: blueviolet;
+    color: bisque;
+}
+
+#buttons {
+    display: none;
 }
