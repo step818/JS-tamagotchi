@@ -8,19 +8,24 @@
     <body>
         <h1>Welcome to Tamagotchi Land</h1>
         <div class="container">
-            <h3>There's a tamagotchi inside the computer and he might be hungry...</h3>
-            <h4>Give the tamagotchi a name...</h4>
+            <h3>You naw have to take care of this tamagotchi. Good luck...</h3>
+
             <form id="nameForm">
-                Name:<br>
-                <input type="text" name="name"><br>
-
-                <button id="submit" class="btn btn-primary">Start</button>
+                <label for="tamagotchiName" >Name your new tamagotchi</label>
+                <input id="tamagotchiName" type="text" required><br>
+                <button id="start" class="btn btn-primary">Start</button>
             </form>
+
             <p><span id="name"></span> gets hungry all the time. Feed him frequently or he will eat you!</p>
-            <form id="feedForm">
+            <h4>Hunger Level: <span id="foodLevels"></span></h4>
+            <div class="progress-bar">
+                <div class="bar" id="hunger"></div>
+            </div>
 
-                <button id="feed" class="btn btn-inverse">Feed <span id="name"></span></button>
-            </form>
+            <div id="buttons">
+                <button class="bigButton" id="feed">Feed</button>
+            </div>
+            <p>Food: <span id="showFood"></span></p><br>
         </div>
     </body>
 </html>
