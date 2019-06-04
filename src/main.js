@@ -6,33 +6,38 @@ import  Tamagotchi  from './tamagotchi.js';
 
 $(document).ready(function() {
     console.log('at least this');
-
+    let p;
+    
     $('#nameForm').submit(function(event) {
     event.preventDefault();
-    console.log(name);
+    console.log('clicked');
 
-    let p = new Tamagotchi($("#tamagotchiName").val());
+    p = new Tamagotchi($("#tamagotchiName").val());
 
     $('#name').text(p.name);
-    });
-    $('#nameForm').hide();
-    p.setHunger();
+    console.log(p.name);
 
-  
-    setInterval(() => {
-        if (p.didYouDie() == false) {
-            $('#showFood').text(p.foodLevel);
-        } else {
-            alert("your tamagotchi has died:'(");
+    p.setHunger();
+    setInterval(function() {
+        console.log("time");
+        $('#foodLevels').text(p.foodLevel);
+        $('#dead').text(p.didYouDie());
+        if (p.foodLevel <= 0) {
+            $('#dead').show();
         }
-    }, 1000);
+    }, 200);
 
     $('#feed').click(function (event) {
         event.preventDefault();
         p.feed();
         $('#foodLevels').text(p.foodLevel);    
     });
+    console.log(p.foodLevel);
+    });
+    
 
+
+    
     // function reset() {
     //     location.reload(true);
     // }
